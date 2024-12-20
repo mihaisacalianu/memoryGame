@@ -1,0 +1,37 @@
+:root{
+    --large-text: 2rem;
+    --medium-text: 1.5rem;
+    --small-text: 1.2rem;
+    --main-color: #c0ddf9;
+    --button-color:rgb(243, 193, 76);
+}
+
+body{
+    background-color: var(--main-color);
+    font-family: Arial, Helvetica, sans-serif;
+    margin:auto;
+    width: 70%;
+}
+
+button{
+    background-color: var(--button-color);
+    text-transform: capitalize;
+    height: 50px;
+    width: 150px;
+    border-radius: 10px;
+    box-shadow: 0 0 16px rgba(0,0,0, 0.1);
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: var(--small-text);
+}
+
+.landing-page{
+    width: 100%;
+    margin:auto;
+    height: 100vh;
+    background-color: #90c8fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
