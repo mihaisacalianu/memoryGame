@@ -11,8 +11,10 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     margin:auto;
     width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
 button{
     background-color: var(--button-color);
     text-transform: capitalize;
@@ -25,13 +27,59 @@ button{
     font-size: var(--small-text);
 }
 
-.landing-page{
+#landing-page{
     width: 100%;
     margin:auto;
     height: 100vh;
     background-color: #90c8fc;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
 
+#game-page{
+    background-color: white;
+    width: 500px;
+    min-width: 500px;
+    height: 600px;
+    margin-top: 15%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(6,1fr);
+    border-radius: 10px;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+.game-squares{
+    background-color: var(--main-color);
+    width: 100px;
+    height: 100px;
+    justify-self: center;
+    align-self: center;
+    border-radius: 5px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--large-text);
+    font-weight: bold;
+}
+#score-board{
+    grid-column: 1 /span 4;
+    grid-row: 1;
+    font-size: var(--medium-text);
+    display: flex;
+    flex-direction: column;
+    text-transform: capitalize;
+}
+#stop-game-btn{
+    grid-column: 1 /span 4;
+    grid-row: 6;
+    justify-self: center;
+    align-self: center;
+}
+.img-game{
+    height: 100px;
+    width: 100px;
+    border-radius: 5px;
+}
