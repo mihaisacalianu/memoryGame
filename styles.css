@@ -32,7 +32,7 @@ button{
     margin:auto;
     height: 100vh;
     background-color: #90c8fc;
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -43,7 +43,7 @@ button{
     min-width: 500px;
     height: 600px;
     margin-top: 15%;
-    display: grid;
+    display: none;
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: repeat(6,1fr);
     border-radius: 10px;
