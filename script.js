@@ -8,16 +8,12 @@ function init(){
     const time = document.getElementById('time');
     const gameSquares = document.getElementsByClassName('game-squares');
     const images = document.getElementsByClassName('img-game');
+    const mark = document.getElementsByClassName('mark');
     let movesValue = 0;
 
     startBtn.addEventListener('click',startGame);
 
-    function showImage(gameSquares){
-        for(let i = 0;i<gameSquares.length;i++){
-            gameSquares[i].addEventListener('click',showImage);
-        }
-       
-    }
+ 
     //showImage(gameSquares);
 
     function startGame(){
@@ -26,8 +22,8 @@ function init(){
         moves.innerText = `moves: ${movesValue}`;
         timer();
         hideImages(images);
+        showImage(gameSquares);
     }
-
     function timer(){
         var sec = 0;
         var min = 0;
@@ -50,11 +46,16 @@ function init(){
     }
     function hideImages(array){
        for(let i = 0;i<array.length;i++){
-       array[i].style.visibility = 'hidden';
+       array[i].style.display = 'none';
        }
     }
-    function showImage(){
-       //target.value.style.visibility = 'visible';
-       console.log('you pressed me!');
-    }
+    function showImage(gameSquares){
+       for(let i=0;i<gameSquares.length;i++){
+        gameSquares[i].addEventListener('click',function(){
+        mark[i].style.display = 'none';
+        images[i].style.display = 'block';
+        });
+       }
+     
+     }
 }
