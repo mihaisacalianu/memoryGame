@@ -83,3 +83,14 @@ button{
     width: 100px;
     border-radius: 5px;
 }
+
+#game-over{
+    width: 100%;
+    margin:auto;
+    height: 100vh;
+    background-color: #90c8fc;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

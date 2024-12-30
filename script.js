@@ -9,19 +9,22 @@ function init(){
     const gameSquares = document.getElementsByClassName('game-squares');
     const images = document.getElementsByClassName('img-game');
     const mark = document.getElementsByClassName('mark');
+    const gameOver = document.getElementById('game-over');
+    const restartBtn = document.getElementById('restart-game');
+    const finalScore = document.getElementById('final-score');
+
+    gameOver.style.display = 'none';
     let movesValue = 0;
     let firstAnimal = images[0].getAttribute('alt');
     let animals = [firstAnimal];
-
     startBtn.addEventListener('click',startGame);
-
     function startGame(){
-
         landingPage.style.display = 'none';
         gamePage.style.display = 'grid';
         moves.innerText = `moves: ${movesValue}`;
         timer();
         hideImages(images);
+
         for(let i=0;i<gameSquares.length;i++){
             gameSquares[i].addEventListener('click',function(){
                 showImage(images[i],mark[i]);
@@ -29,6 +32,7 @@ function init(){
                 if(firstAnimal === currentAnimal || animals.includes(currentAnimal)){
                     showImage(images[i],mark[i]);
                     animals.push(currentAnimal);
+                    console.log('length of animals array: ', animals.length);
                 }else{
                     setTimeout(function(){
                         hideImage(images[i],mark[i]);
@@ -36,7 +40,8 @@ function init(){
                 }
                 updateMoves();
                 firstAnimal = currentAnimal; 
-        });
+                checkIfGameIsOver();
+                    });
 
     }
 }
@@ -77,5 +82,18 @@ function init(){
             movesValue++;
             moves.innerText = `moves: ${movesValue}`;
         }
-  
+    function checkIfGameIsOver(){
+            if(animals.length === 17){
+            gamePage.style.display = 'none';
+            gameOver.style.display = 'flex';
+            finalScore.innerText = `your score is ${movesValue} moves in ${time.innerText}`;
+            restartBtn.addEventListener('click',()=>{
+                gameOver.style.display = 'none';
+                movesValue = 0;
+                startGame();
+                time.innerHTML = `time: 00:00`;
+                //timer(); 
+            });
+        }
+        }
     }
