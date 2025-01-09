@@ -5,7 +5,6 @@
     --main-color: #c0ddf9;
     --button-color:rgb(243, 193, 76);
 }
-
 body{
     background-color: var(--main-color);
     font-family: Arial, Helvetica, sans-serif;
@@ -26,7 +25,6 @@ button{
     letter-spacing: 1px;
     font-size: var(--small-text);
 }
-
 #landing-page{
     width: 100%;
     margin:auto;
@@ -36,7 +34,6 @@ button{
     justify-content: center;
     align-items: center;
 }
-
 #game-page{
     background-color: white;
     width: 500px;
@@ -82,4 +79,14 @@ button{
     height: 100px;
     width: 100px;
     border-radius: 5px;
+}
+#game-over{
+    width: 100%;
+    margin:auto;
+    height: 100vh;
+    background-color: #90c8fc;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
